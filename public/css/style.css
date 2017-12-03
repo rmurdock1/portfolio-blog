@@ -1,0 +1,198 @@
+html {
+  width: 100%;
+  height: 100%; }
+
+  body {
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background: black; }
+
+    h1,h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      margin: 0 0 35px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 200%;}
+/* Nav bar */
+
+
+      ul {
+        overflow: auto;
+        list-style-type: none;
+      }
+
+      li {
+        height: 30px;
+        float: left;
+        margin-right: 0px;
+        border-right: 1px solid #aaa;
+        padding: 0 10px;
+      }
+
+      li:last-child {
+        border-right: none;
+      }
+
+      li a {
+        text-decoration: none;
+        color: #ccc;
+        font-family: 'Raleway', sans-serif;
+        font-size: 150%;
+        text-transform: uppercase;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+      }
+
+      li a:hover {
+        color: #665;
+      }
+
+      li.active a {
+        font-weight: bold;
+        color: #E84855;
+      }
+
+.master {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 300px 0;
+  text-align: center;
+  color: white;
+  background-image:url("images/intro.jpg");
+}
+
+h1 span {
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  padding: 0 10px;
+  font-size: 200%;
+}
+p span {
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  padding: 0 10px;
+  font-size: 150%;
+
+}
+
+#aboutme {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 200px 0;
+  text-align: right;
+  color: white;
+  background-color: black;
+  background-image: url("images/me.jpg");
+}
+.about{
+  font-size: 150%;
+  padding-right: 10px;
+}
+  dl {
+    text-align: right;
+  }
+
+#skills {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+}
+/* Start Gallery  function*/
+.gallery {
+  width: 100%;
+  margin: auto;
+  padding: 10px;
+  background: black;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  transition: .1s transform;
+  transform: translateZ(0);
+}
+
+.gallery > div:hover {
+  z-index: 1;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.3,1.3);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+/* End Gallery  function*/
+
+#blog {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  color: white;
+  background-color: black;
+  background: url("images/keyboard.jpg")no-repeat
+}
+
+footer {
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding: 200px 0;
+  text-align: center;
+  color: white;
+  background: url("images/intro.jpg") no-repeat bottom center scroll
+
+}
+h2 span {
+  background: rgba(0,0,0,0.8);
+  padding: 10px;
+  padding: 0 10px;
+  font-size: inherit;
+}
+.email {
+  background: rgba(0,0,0,1);
+  padding: 10px;
+  padding: 0 10px;
+  color: white;
+  font-size: 150%;
+}
+
+
+
+/*body{
+  background:#f9f9f9;
+  color: white;
+  margin: 0;
+  padding: 0;
+
+}*/

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>R|M</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body id="page-top">
+
+  <nav>
+        <ul>
+          <li class="active"><a href="#contact">Rashard Murdock</a></li>
+          <li><a href="#aboutme">About Me</a></li>
+          <li><a href="#skills">Skill Set</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+  </nav>
+
+  <!--Header Intro-->
+
+  <header class="master">
+    <div class="head">
+      <h1><span>Welcome</span></h1>
+      <p><span>Rashard Murdock</span></p>
+      <p><span>The Digital Product Specialist</span></p>
+      <a href="#aboutme" class="button"></a>
+    </div>
+  </header>
+
+  <!--About me-->
+  <section id="aboutme">
+      <h2>About Me</h2>
+    <div class ="about">
+      <p>Hi! If you havent noticed already my name is Rashard,<br /> Always glad to see you! If you have a digital project, I have the answers.</p>
+        <dl>
+          <dt>Certified Product Manager</dt>
+          <dt>Jira Project Managment</dt>
+          <dt>Full QA Test Strategy and Execution</dt>
+          <dt>Requirements Gathering</dt>
+          <dt>Effective Client Management</dt>
+        </dl>
+    </div>
+  </section>
+
+  <!--Skills and Hobbies-->
+  <section id="skills">
+    <div>
+      <h2>Skills</h2>
+      <div class="gallery">
+        <div>
+          <img src="logos/logo1.png" alt="icon 1" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo2.png" alt="icon 2" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo3.png" alt="icon 3" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo4.jpg" alt="icon 4" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo5.png" alt="icon 5" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo6.jpg" alt="icon 6" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo7.png" alt="icon 7" style="width:300px;height:300px;"/>
+        </div>
+        <div>
+          <img src="logos/logo8.png" alt="icon 8" style="width:300px;height:300px;"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!--Blog Post page -->
+  <section id="blog">
+    <h1>Personal Blog</h1>
+    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#formModal"> Add Post</button>
+    <br />
+    {#blogpost}
+      <div class="card card-inverse" style="background-color: rgba(0,0,0,0.8); border-color: #333;">
+        <div class="card-block">
+          <h3>{title}</h3>
+          <button type="button" class="btn btn-outline-secondary" data-toggle="collapse"
+          href="#blogpost_{id}" aria-expanded="false" aria-controls="blogpost_{id}" aria-label="Right Align">View</button>
+
+          <div class="collapse" id="blogpost_{id}">
+          <br />
+          <br />
+          <p><strong>Post: </strong>{post}</p>
+          <p><strong>Source: </strong>{source}</p>
+          <br/>
+          <hr />
+
+          <button class="btn edit-post"
+          data-toggle="modal"
+          data-target="#editFormModal"
+          data-id="{id}"
+          data-title="{title}"
+          data-post="{post}"
+          data-source="{source}"> EDIT </button>
+
+          <button class="btn btn-danger delete-post"
+          data-id="{id}"> DELETE </button>
+
+          </div>
+        </div>
+      </div>
+    {/blogpost}
+
+  <!-- Add Post Modal -->
+  <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel">
+    <div class="modal-dialog" role="document" >
+      <div class="modal-content" style="background-color: rgba(0,0,0,0.8); border-color: #333;">
+         <form method="post" action="/add">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Add Post</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" name="title" />
+                </div>
+                <div class="form-group">
+                  <label>Post</label>
+                  <textarea class="form-control" name="post"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Source</label>
+                  <textarea class="form-control" name="source"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal";>Close</button>
+              <input type="submit" class="btn btn-primary" value="Save" />
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- End Add Post Modal -->
+
+  <!-- Edit Post Modal -->
+  <div class="modal fade" id="editFormModal" tabindex="-1" role="dialog" aria-labelledby="editFormModalLabel">
+    <div class="modal-dialog" role="document" >
+      <div class="modal-content" style="background-color: rgba(0,0,0,0.8); border-color: #333;">
+         <form method="post" action="/edit">
+           <input type="hidden" id="edit-form-id" name="id"/>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Add Post</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input type="text" class="form-control" name="title" id="edit-form-title" />
+                </div>
+                <div class="form-group">
+                  <label>Post</label>
+                  <textarea class="form-control" name="post" id="edit-form-post"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Source</label>
+                  <textarea class="form-control" name="source" id="edit-form-source"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal";>Close</button>
+              <input type="submit" class="btn btn-primary" value="Update" />
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <footer id="contact">
+    <div>
+      <h2><span>Contact Me Here</span></h2>
+      <a href="mailto:rmurdoc@yahoo?subject=Feedback"><span class = "email">RMURDOC@YAHOO.COM</span></a>
+      <p><span>Copyright &copy; Rashard Murdock 2017</span></p>
+    </div>
+  </footer>
+
+  <!-- <ul>
+    <li><a href="/portfolio">Home</a></li>
+    <li><a href="/">Blog</a></li>
+  </ul> -->
+
+  <!-- <div class="container">
+    <div class="row">
+      <div>
+        {+body /}
+      </div>
+    </div>
+  </div> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/js/bootstrap.min.js" integrity="sha384-ux8v3A6CPtOTqOzMKiuo3d/DomGaaClxFYdCu2HPMBEkf6x2xiDyJ7gkXU0MWwaD" crossorigin="anonymous"></script>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
