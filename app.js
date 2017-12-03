@@ -5,14 +5,16 @@ var express = require('express'),
     dust = require('dustjs-helpers'),
     pg = require('pg'),
     app = express();
+var PORT = process.env.PORT || 8000;
 
 //DB Connection string
-const config = {
-  user: 'postgres',
-  database: 'blog',
-  password: '',
-  port:5432
-};
+// const config = {
+//   user: 'postgres',
+//   database: 'blog',
+//   password: '',
+//   port:5432
+// };
+const config = process.env.DATABASE_URL;
 
 const pool = new pg.Pool(config)
 //var connect = "postgres://rashard:user@localhost/blog";
@@ -90,7 +92,6 @@ app.post('/edit', function(req, res){
 });
 
 //Heroku setup
-var PORT = process.env.PORT || 8000;
 //Server call
 app.listen(PORT, function(){
   console.log("Listening on PORT " + PORT);
